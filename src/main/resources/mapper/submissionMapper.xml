@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper.submissionMapper">
+<!--    <resultMap id="SubmissionMap"  type="submissionPojo">-->
+<!--        <result property="email" javaType="String" column="email"/>-->
+<!--        <result property="pid" javaType="String" column="pid"/>-->
+<!--        <result property="submitTime" javaType="java.util.Date" jdbcType="TIMESTAMP" column="submitTIme"/>-->
+<!--        <result property="state" javaType="String" column="state"/>-->
+<!--        <result property="normalSubmit" javaType="Integer" column="normalSubmit"/>-->
+<!--        <result property="timeUsed" javaType="Integer" column="timeUser"/>-->
+<!--        <result property="memoryUsed" javaType="Integer" column="memoryUser"/>-->
+<!--        <result property="info" javaType="String" column="info"/>-->
+<!--    </resultMap>-->
+    <insert id="addSubmission" parameterType="pojo.submissionPojo">
+        insert into ljkz.submissions (email, pid, submitTime, state, normalSubmit, timeUsed, memoryUsed, info) values
+        (#{email}, #{pid}, #{submitTime}, #{state}, #{normalSubmit}, #{timeUsed}, #{memoryUsed}, #{info});
+    </insert>
+</mapper>
