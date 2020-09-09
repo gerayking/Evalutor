@@ -1,4 +1,4 @@
-package Evalutor;
+package Singleton;
 
 import com.spotify.docker.client.DefaultDockerClient;
 import com.spotify.docker.client.DockerClient;
@@ -8,13 +8,13 @@ import java.util.Map;
 
 // 管理docker-client
 public class DockerClinetManager {
-    public static final DockerClient client = getDockerClient();
+    public static  DockerClient client;
     private DockerClinetManager(){
 
     }
     public static DockerClient getDockerClient(){
-        if(client == null){
-            return   new DefaultDockerClient("http://localhost:2375");
+        if(client==null){
+            client=new DefaultDockerClient("http://localhost:2375");
         }
         return client;
     }

@@ -17,4 +17,17 @@
         insert into ljkz.submissions (email, pid, submitTime, state, normalSubmit, timeUsed, memoryUsed, info) values
         (#{email}, #{pid}, #{submitTime}, #{state}, #{normalSubmit}, #{timeUsed}, #{memoryUsed}, #{info});
     </insert>
+    <update id="updateSubmission" parameterType="pojo.submissionPojo">
+        UPDATE ljkz.submissions
+        <set>
+            <if test="state != null and state != ''">state=#{state},</if>
+            <if test="timeUsed != null and timeUsed!=''">timeUsed=#{timeUsed},</if>
+            <if test="memoryUsed != null and timeUsed=''">memoryUsed=#{memoryUsed},</if>
+            <if test="info != null and info = ''">info=#{info},</if>
+        </set>
+        WHERE email=#{email} and pid=#{pid} and submitTime=#{submitTime};
+    </update>
+    <update id="addAC" parameterType="String">
+        update ljkz.rank set ac = ac + 1 where email=#{email} and cid = #{cid}
+    </update>
 </mapper>

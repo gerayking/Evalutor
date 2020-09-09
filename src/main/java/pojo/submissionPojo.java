@@ -13,7 +13,7 @@ import java.util.Date;
 public class submissionPojo {
     public String email;
     public String pid;
-    public Timestamp submitTime;
+    public Date submitTime;
     public String state;
     public int normalSubmit;
     public int timeUsed;

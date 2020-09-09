@@ -1,12 +1,17 @@
 package Evalutor;
 
+import lombok.Data;
+
+import java.util.Date;
+
+@Data
 public class Submission {
     public int lid;//language id 1-c,2-cpp
-    public int pid;//program id
-    public String resources;// c or c++ resources
-    public String execName;
-    public String resFileName;
-    public int uid;// user id
-    public String timeLim;
-    public String memoLim;
+    public String pid;//program id
+    public String code;// c or c++ resources
+    public String email;// user id
+    public Date submitTime;
+    public int timeLimit;
+    public String cid;
+    public int memoryLimit;
 }

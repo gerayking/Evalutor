@@ -21,6 +21,7 @@ public class DockerTest {
         }
         ContainerConfig config = ContainerConfig.builder()
                 .image("ubuntu")
+                .env("-")
                 .cmd("sh", "-c", "while :; do sleep 1; done")
                 .build();
         ContainerCreation creation = client.createContainer(
